@@ -1,7 +1,7 @@
-resource "aws_internet_gateway" "mesh-vpc-internet-gateway" {
-  vpc_id = "${aws_vpc.mesh-vpc.id}"
+resource "aws_internet_gateway" "test-vpc-internet-gateway" {
+  vpc_id = "${aws_vpc.test-vpc.id}"
 
-  tags {
-    Name = "mesh-vpc-internet-gateway"
+  tags = {
+    Name = "test-vpc-internet-gateway"
   }
 }

@@ -1,6 +1,6 @@
-resource "aws_network_acl" "mesh-vpc-network-acl" {
-    vpc_id = "${aws_vpc.mesh-vpc.id}"
-    subnet_ids = ["${aws_subnet.mesh-vpc-subnet1.id}", "${aws_subnet.mesh-vpc-subnet2.id}"]
+resource "aws_network_acl" "test-vpc-network-acl" {
+    vpc_id = "${aws_vpc.test-vpc.id}"
+    subnet_ids = ["${aws_subnet.test-vpc-subnet1.id}", "${aws_subnet.test-vpc-subnet2.id}"]
     
     egress {
         protocol   = "-1"
@@ -20,8 +20,8 @@ resource "aws_network_acl" "mesh-vpc-network-acl" {
         to_port    = 0
     }
 
-    tags {
-        Name = "mesh-vpc-network-acl"
+    tags = {
+        Name = "test-vpc-network-acl"
     }
 }
 

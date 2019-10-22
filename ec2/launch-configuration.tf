@@ -12,7 +12,7 @@ resource "aws_launch_configuration" "ecs-launch-configuration" {
 resource "template_file" "ecs-launch-configuration-user-data" {
     template = "${file("${path.module}/user-data.tpl")}"
 
-    vars {
+    vars = {
         ecs-cluster-name = "${var.ecs-cluster-name}"
     }
 }
